@@ -42,12 +42,14 @@ const MovieList = (props) => {
         <div className="text-center">
           <div>
             {" "}
-            Total displayed Results {array.length} {"   "}
+            {
+              props.count ?  <h4> Total displayed Results {array.length}   <h4>
+              <br /> Scroll down to get {props.count - array.length} more results
+            </h4> </h4> : <h4>Search for a movie</h4>
+            } {"   "}
             <br />{" "}
            
-            <h4>
-              <br /> Scroll down to get {props.count - array.length} more results
-            </h4>
+          
           </div>
 
           {array.map((movie, index) => (
