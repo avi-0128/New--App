@@ -46,7 +46,7 @@ const MovieList = (props) => {
             <br />{" "}
            
             <h4>
-              <br /> Scroll down to get more results
+              <br /> Scroll down to get {props.count - array.length} more results
             </h4>
           </div>
 

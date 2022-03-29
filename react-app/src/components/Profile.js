@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { getCurrentUser } from './CurrentUser'
+import { deleteCurrentUser, getCurrentUser } from './CurrentUser'
 import NavBar from './NavBar'
 
-const Profile = (props) => {
+const Profile = ({setIsLoggedIn}) => {
+ 
+
   let user = getCurrentUser()
   const [newPassword , setNewPassword] = useState(user.password)
   console.log(newPassword)
