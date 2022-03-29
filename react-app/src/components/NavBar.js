@@ -33,8 +33,8 @@ const NavBar = ({ setSearch, setIsLoggedIn }) => {
           <li className="nav-item active">
           {/* onClick={logout} */}
           
-         
-         <button type='button' className='btn btn-dark nav-link' onClick={logout}>Logout</button>
+         <Link to='/' className='btn btn-dark nav-link' onClick={logout}>Logout</Link>
+         {/* <button type='button' className='btn btn-dark nav-link' onClick={logout}>Logout</button> */}
         
          
           </li>

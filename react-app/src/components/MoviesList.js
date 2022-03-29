@@ -43,9 +43,9 @@ const MovieList = (props) => {
           <div>
             {" "}
             {
-              props.count ?  <h4> Total displayed Results {array.length}   <h4>
+              props.count ?  <h4> Total displayed Results {array.length}  
               <br /> Scroll down to get {props.count - array.length} more results
-            </h4> </h4> : <h4>Search for a movie</h4>
+            </h4>  : <h4>Search for a movie</h4>
             } {"   "}
             <br />{" "}
            
@@ -53,10 +53,10 @@ const MovieList = (props) => {
           </div>
 
           {array.map((movie, index) => (
+          
             <div
-              className="card-group text-center w-25 mx-auto mt-5"
-              key={index}
-            >
+              className="text-center w-25 mx-auto mt-5"
+              key={index}>
               <img src={movie.Poster} alt={movie.Title} />
               <div className="card-body">
                 <p className="card-text mx-auto">{movie.Title}</p>

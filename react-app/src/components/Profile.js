@@ -6,13 +6,18 @@ const Profile = ({setIsLoggedIn}) => {
  
 
   let user = getCurrentUser()
-  const [newPassword , setNewPassword] = useState(user.password)
-  console.log(newPassword)
+  // const [newPassword , setNewPassword] = useState(user.password)
+  // console.log(newPassword)
   
-  useEffect(() => {
-     user.password = newPassword
-     console.log(user)
-  }, [newPassword])
+  // useEffect(() => {
+  //    user.password = newPassword
+  //    console.log(user)
+  // }, [newPassword])
+
+  const logout = () => {
+    setIsLoggedIn('false')
+   deleteCurrentUser()
+  }
 
   return (
     <>
