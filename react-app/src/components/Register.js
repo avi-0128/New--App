@@ -17,7 +17,7 @@ const Register = () => {
   const userState = useSelector(userReduxData);
 
   const dispatch = useDispatch();
-
+  console.log('Hello')
   const validate = (e) => {
     e.preventDefault();
     debugger
