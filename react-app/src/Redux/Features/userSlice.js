@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const exisitingData = JSON.parse(localStorage.getItem('userData'))
+let exisitingData = JSON.parse(localStorage.getItem('userData'))
 let data = []
 if(exisitingData) data = exisitingData
 
@@ -12,6 +12,13 @@ export const userSlice = createSlice({
   reducers: {
     signUp: (state, action) => {
       state.user = action.payload;
+      if(exisitingData) {
+        exisitingData.push(state.user)
+        
+      }
+      else exisitingData = [state.user]
+      
+      localStorage.setItem('userData' , JSON.stringify(exisitingData))
     },
     logIn: (state, action) => {
       state.user = action.payload;

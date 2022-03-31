@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { signUp, userReduxData } from "../Redux/Features/userSlice";
 import { checkInputDataPhoneNumber } from "./checkInputData";
 import LogIn from "./LogIn";
-
-const Register = () => {
+import './FormStyle.css'
+const RegDuplicate = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
@@ -20,20 +20,16 @@ const Register = () => {
 
   const validate = (e) => {
     e.preventDefault();
-    debugger
     if (
       userInfo.name.trim() &&
       userInfo.phoneNumber.length === 10 &&
       userInfo.password.trim()
     ) {
       const check = checkInputDataPhoneNumber(userState, userInfo);
-      debugger
       if (check === "true") {
         alert("User Registered!!");
         setIsValidData("true");
-      } 
-     
-      else {
+      } else {
         dispatch(signUp([...userState, userInfo]));
         setIsValidData("true");
        
@@ -48,39 +44,39 @@ const Register = () => {
     <>
    
       {isValidData === "false" ? (
-        <div>
-          <div className="card text-center mx-auto mt-5 w-50 bg-light">
-            <div className="card-body ">
-              <form onSubmit={validate}>
-                <div className="form-group mt-2">
-                  <label>Email address</label>
-                  <br />
+        
+        <div className="container">
+          <div className="register-div">
+            <h2>Register Here</h2>
+              <form onSubmit={validate} className='register-form'>
+                <div className="form-group">
+                  
                   <input
                     type="email"
-                    placeholder="Enter email"
+                    className="formm-control"
+                    placeholder="Email"
                     value={userInfo.email}
                     onChange={(e) =>
                       setUserInfo({ ...userInfo, email: e.target.value })
                     }
                   />
                 </div>
-                <div className="form-group mt-2">
-                  <label>Name</label>
-                  <br />
+                <div className="form-group">
+                 
                   <input
                     type="text"
-                    placeholder="Enter Name"
+                    placeholder="Name"
+                    className="formm-control"
                     value={userInfo.name}
                     onChange={(e) =>
                       setUserInfo({ ...userInfo, name: e.target.value })
                     }
                   />
                 </div>
-                <div className="form-group mt-2">
-                  <label>Phone Number</label>
-                  <br />
+                <div className="form-group">
                   <input
                     type="text"
+                    className="formm-control"
                     placeholder="Phone Number"
                     value={userInfo.phoneNumber}
                     onChange={(e) =>
@@ -88,13 +84,14 @@ const Register = () => {
                     }
                   />
                   <br />
-                  <small>Enter your 10 digit mobile number</small>
+                  {/* <small className="control-small">Enter your 10 digit mobile number</small> */}
                 </div>
-                <div className="form-group mt-2">
-                  <label>Password</label>
-                  <br />
+                <div className="form-group">
+                
+                  
                   <input
                     type="password"
+                    className="formm-control"
                     placeholder="Password"
                     value={userInfo.password}
                     onChange={(e) =>
@@ -102,15 +99,15 @@ const Register = () => {
                     }
                   />
                 </div>
-                <div className="text-center mt-2">
-                  <button type="submit" className="btn btn-primary ">
+                <div >
+                  <button type="submit" className="register-button">
                     Submit
                   </button>
                 </div>
-                <small>Already have an account? <button type="button" onClick={registered} className="btn btn-light">Click here</button></small>
+                <small>Already have an account? <button type="button" onClick={registered} className="login-button">Click here</button></small>
               </form>
             </div>
-          </div>
+         
         </div>
       ) : (
         <LogIn />
@@ -119,4 +116,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegDuplicate;
