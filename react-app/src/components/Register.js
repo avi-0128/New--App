@@ -118,5 +118,5 @@ const Register = () => {
     </>
   );
 };
-
+console.log('Hi')
 export default Register;
