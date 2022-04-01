@@ -20,22 +20,24 @@ const Register = () => {
 
   const validate = (e) => {
     e.preventDefault();
-    debugger
+    
     if (
       userInfo.name.trim() &&
       userInfo.phoneNumber.length === 10 &&
       userInfo.password.trim()
     ) {
       const check = checkInputDataPhoneNumber(userState, userInfo);
-      debugger
+      
       if (check === "true") {
         alert("User Registered!!");
         setIsValidData("true");
+        
       } 
      
       else {
         dispatch(signUp([...userState, userInfo]));
         setIsValidData("true");
+        localStorage.setItem("userData", JSON.stringify([...userState, userInfo]));
        
       }
     } else alert("Enter valid details");

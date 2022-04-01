@@ -1,14 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Register from "./components/Register";
-import LogIn from "./components/LogIn";
 import MoviesHome from "./components/MoviesHome";
 import Profile from "./components/Profile";
 import Favourites from "./components/Favourites";
-import DuplicateMovies from "./components/DuplicateMovies";
-import DuplicateProfile from "./components/DuplicateProfile";
+import LogOut from './components/LogOut'
+import UserName from "./components/UserName";
+import PhoneNumber from "./components/PhoneNumber";
+import Password from "./components/Password";
 
 function App() {
   return (
@@ -17,9 +16,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<MoviesHome />} />
-          <Route path="/home/profile" element={<Profile />} />
-          {/* <Route path="/home/profile" element={<DuplicateProfile />} /> */}
+          <Route path="/home/profile" element={<Profile />}/>
+            <Route path="/home/profile/userName" element={<UserName/>} />
+            <Route path="/home/profile/phoneNumber" element={<PhoneNumber/>} />
+            <Route path="/home/profile/password" element={<Password/>} />
+          
+         
           <Route path="/home/fav" element={<Favourites />} />
+          <Route path="/home/logout" element={<LogOut />} />
         </Routes>
       </BrowserRouter>
     </>

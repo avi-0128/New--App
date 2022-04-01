@@ -37,7 +37,9 @@ const MoviesHome = () => {
   }, [movieState, pageNumber]);
 
   const [isLoggedIn, setIsLoggedIn] = useState("true");
-
+  useEffect(() => {
+    getCurrentUser() ? setIsLoggedIn('true') : setIsLoggedIn('false')
+  },[getCurrentUser()])
   return (
     <>
       {isLoggedIn === "true" ? (

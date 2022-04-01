@@ -34,7 +34,7 @@ const LogIn = () => {
       if(!localStorage.getItem(getCurrentUser().phoneNumber))
       localStorage.setItem(userInfo.phoneNumber , JSON.stringify([]))
 
-      localStorage.setItem("userData", JSON.stringify(userState));
+     
     } else alert("Enter Correct Details");
   };
   const [userRegistered , SetUserRegistered] = useState('false')

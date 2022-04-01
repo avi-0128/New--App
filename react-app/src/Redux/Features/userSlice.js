@@ -12,13 +12,6 @@ export const userSlice = createSlice({
   reducers: {
     signUp: (state, action) => {
       state.user = action.payload;
-      if(exisitingData) {
-        exisitingData.push(state.user)
-        
-      }
-      else exisitingData = [state.user]
-      
-      localStorage.setItem('userData' , JSON.stringify(exisitingData))
     },
     logIn: (state, action) => {
       state.user = action.payload;
