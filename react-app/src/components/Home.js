@@ -8,6 +8,7 @@ import Register from "./Register";
 const Home = () => {
   const currentUser = getCurrentUser()
  console.log(currentUser)
+ console.log('Hi')
   return <>{ currentUser ? <MoviesHome /> : <RegDuplicate />}</>;
 };
 
