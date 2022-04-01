@@ -1,14 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Register from "./components/Register";
-import LogIn from "./components/LogIn";
+
 import MoviesHome from "./components/MoviesHome";
 import Profile from "./components/Profile";
 import Favourites from "./components/Favourites";
-import DuplicateMovies from "./components/DuplicateMovies";
-import DuplicateProfile from "./components/DuplicateProfile";
+
+import LogOut from "./components/LogOut";
 
 function App() {
   return (
@@ -20,6 +18,7 @@ function App() {
           <Route path="/home/profile" element={<Profile />} />
           {/* <Route path="/home/profile" element={<DuplicateProfile />} /> */}
           <Route path="/home/fav" element={<Favourites />} />
+          <Route path="home/logout" element={<LogOut/>} />
         </Routes>
       </BrowserRouter>
     </>

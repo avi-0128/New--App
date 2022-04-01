@@ -5,8 +5,7 @@ import {
   checkInputDataPassword,
   checkInputDataPhoneNumber,
 } from "./checkInputData";
-import { getCurrentUser, setCurrentUser } from "./CurrentUser";
-import DuplicateMovies from "./DuplicateMovies";
+import {  getCurrentUser, setCurrentUser } from "./CurrentUser";
 import { GetIndexFromState } from "./GetIndexFromState";
 
 import MoviesHome from "./MoviesHome";
@@ -31,9 +30,10 @@ const LogIn = () => {
       setIsValidINput("true");
       const user = GetIndexFromState(userState, userInfo);
       setCurrentUser(user);
-      if(!localStorage.getItem(getCurrentUser().phoneNumber))
+      if(!localStorage.getItem(getCurrentUser().phoneNumber)) {
       localStorage.setItem(userInfo.phoneNumber , JSON.stringify([]))
-
+      
+      }
       localStorage.setItem("userData", JSON.stringify(userState));
     } else alert("Enter Correct Details");
   };

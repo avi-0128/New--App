@@ -1,8 +1,15 @@
 import React from 'react'
 
+import MoviesHome from './MoviesHome'
+
+
 const LogOut = () => {
+
+
   return (
-    <div>LogOut</div>
+    <>
+     <MoviesHome/>
+     </>
   )
 }
 

@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../Redux/Features/moviesSlice";
 import MovieList from "./MoviesList";
 import NavBar from "./NavBar";
-import { getCurrentUser } from "./CurrentUser";
-import LogIn from "./LogIn";
+
 
 const MoviesHome = () => {
   const [search, setSearch] = useState("");
@@ -26,7 +25,7 @@ const MoviesHome = () => {
       setLoading(true);
     };
     fetchMovies([search, pageNumber]);
-  }, [dispatch, search, pageNumber]);
+  }, [ search, pageNumber , dispatch]);
 
   const [movies, setMovies] = useState(movieState);
   useEffect(() => {
@@ -34,15 +33,15 @@ const MoviesHome = () => {
       setMovies([]);
       setPageNumber(1);
     } else if (movieState) setMovies(movies.concat(movieState));
-  }, [movieState, pageNumber]);
+  }, [movieState, pageNumber , movies , search]);
 
-  const [isLoggedIn, setIsLoggedIn] = useState("true");
+ 
 
   return (
     <>
-      {isLoggedIn === "true" ? (
+      
         <div>
-          <NavBar setSearch={setSearch} setIsLoggedIn={setIsLoggedIn} />
+          <NavBar setSearch={setSearch} />
           <MovieList
             movies={movies}
             count={count}
@@ -53,9 +52,7 @@ const MoviesHome = () => {
             
           />
         </div>
-      ) : (
-        <LogIn />
-      )}
+      
     </>
   );
 };

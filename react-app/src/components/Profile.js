@@ -1,23 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { deleteCurrentUser, getCurrentUser } from './CurrentUser'
+import React  from 'react'
+import {  getCurrentUser } from './CurrentUser'
 import NavBar from './NavBar'
 
-const Profile = ({setIsLoggedIn}) => {
+const Profile = () => {
  
 
   let user = getCurrentUser()
-  // const [newPassword , setNewPassword] = useState(user.password)
-  // console.log(newPassword)
   
-  // useEffect(() => {
-  //    user.password = newPassword
-  //    console.log(user)
-  // }, [newPassword])
-
-  const logout = () => {
-    setIsLoggedIn('false')
-   deleteCurrentUser()
-  }
 
   return (
     <>
@@ -31,22 +20,6 @@ const Profile = ({setIsLoggedIn}) => {
   </div>
  </div>
     </div>
-
-    {/* <div className='text-center m-5'>
-    <form className='mx-auto w-50 m-5'>
-    <div className='card mx-auto w-50'>
-    <div className='card-body'>
-      <h4 className='card-title'>Change Your Password Here!!</h4>
-      <h6>Current Password is {newPassword} </h6>
-      <input   className="form-control "
-        type="password"
-        // value={props.value}
-        onChange={(e) => setNewPassword(e.target.value)}/>
-       <small>Note: Password will be changed within 24 hours</small>
-    </div>
-    </div>
-    </form>
-    </div> */}
     </>
   )
 }

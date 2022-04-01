@@ -8,4 +8,3 @@ export const setCurrentUser = (user) => {
 export const getCurrentUser = () => JSON.parse(localStorage.getItem('currentUser'))
 
 export const deleteCurrentUser = () => localStorage.removeItem('currentUser')
-

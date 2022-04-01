@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { getCurrentUser } from "./CurrentUser";
-import DuplicateMovies from "./DuplicateMovies";
 import MoviesHome from "./MoviesHome";
-import RegDuplicate from "./RegDuplicate";
 import Register from "./Register";
 
 const Home = () => {
   const currentUser = getCurrentUser()
  console.log(currentUser)
  console.log('Hi')
-  return <>{ currentUser ? <MoviesHome /> : <RegDuplicate />}</>;
+  return <>{ currentUser ? <MoviesHome /> : <Register />}</>;
 };
 
 export default Home;

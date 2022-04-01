@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import { getCurrentUser } from "./CurrentUser";
 
 const MovieList = (props) => {
-  const inc = () => {
-    // console.log(props.movies)
-    props.setPageNumber((pageNumber) => pageNumber + 1);
-  };
 
   const [array, setNewArray] = useState([...new Set(props.movies)]);
+  // const [array, setNewArray] = useState(props.movies);
 
+  const inc = () => {
+    props.setPageNumber((pageNumber) => pageNumber + 1);
+  };
+ 
   useEffect(() => {
     if (props.search === "") setNewArray([]);
     else setNewArray([...new Set(props.movies)]);
@@ -19,7 +20,6 @@ const MovieList = (props) => {
     if (props.loading) {
       const observer = new IntersectionObserver(
         (entries) => {
-          // console.log(entries[0])
           if (entries[0].isIntersecting) {
             inc();
           }
@@ -28,7 +28,7 @@ const MovieList = (props) => {
       );
       observer.observe(myref.current);
     }
-  }, [props.loading]);
+  }, [props.loading, inc]);
 
   const addCurrentFav = (movie) => {
     let data = JSON.parse(localStorage.getItem(getCurrentUser().phoneNumber));
@@ -41,19 +41,14 @@ const MovieList = (props) => {
       {array && (
         <div className="text-center">
           <div>
-            {" "}
             {
               props.count ?  <h4> Total displayed Results {array.length}  
               <br /> Scroll down to get {props.count - array.length} more results
             </h4>  : <h4>Search for a movie</h4>
-            } {"   "}
-            <br />{" "}
-           
-          
+            } 
+            <br />
           </div>
-
           {array.map((movie, index) => (
-          
             <div
               className="text-center w-25 mx-auto mt-5"
               key={index}>
