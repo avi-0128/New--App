@@ -6,7 +6,7 @@ import {
   checkInputDataPhoneNumber,
 } from "./checkInputData";
 import { getCurrentUser, setCurrentUser } from "./CurrentUser";
-import DuplicateMovies from "./DuplicateMovies";
+
 import { GetIndexFromState } from "./GetIndexFromState";
 
 import MoviesHome from "./MoviesHome";
@@ -31,20 +31,17 @@ const LogIn = () => {
       setIsValidINput("true");
       const user = GetIndexFromState(userState, userInfo);
       setCurrentUser(user);
-      if(!localStorage.getItem(getCurrentUser().phoneNumber))
-      localStorage.setItem(userInfo.phoneNumber , JSON.stringify([]))
-
-     
+      if (!localStorage.getItem(getCurrentUser().phoneNumber))
+        localStorage.setItem(userInfo.phoneNumber, JSON.stringify([]));
     } else alert("Enter Correct Details");
   };
-  const [userRegistered , SetUserRegistered] = useState('false')
+  const [userRegistered, SetUserRegistered] = useState("false");
   const register = () => {
-    SetUserRegistered('true')
-  }
+    SetUserRegistered("true");
+  };
   return (
     <>
-      
-      {(isValidInput === "false" && userRegistered==='false') ? (
+      {isValidInput === "false" && userRegistered === "false" ? (
         <div>
           <div className="card text-center mx-auto mt-5 w-50">
             <div className="card-body">
@@ -78,14 +75,25 @@ const LogIn = () => {
                     Submit
                   </button>
                   <div className="text-center mt-2">
-                  <small>Dont have an account? <button className="btn btn-light" type="button" onClick={register}>Register Here</button></small>
+                    <small>
+                      Dont have an account?{" "}
+                      <button
+                        className="btn btn-light"
+                        type="button"
+                        onClick={register}
+                      >
+                        Register Here
+                      </button>
+                    </small>
                   </div>
                 </div>
               </form>
             </div>
           </div>
         </div>
-      ) : (userRegistered==='true') ? (<Register/>) : (
+      ) : userRegistered === "true" ? (
+        <Register />
+      ) : (
         <MoviesHome />
       )}
     </>

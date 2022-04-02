@@ -1,20 +1,14 @@
-import React from 'react'
-
-
-import NavBar from './NavBar'
-import ProfileNav from './ProfileNav'
+import React from "react";
+import NavBar from "./NavBar";
+import ProfileNav from "./ProfileNav";
 
 const Profile = () => {
- 
-  
- 
   return (
     <>
-    <NavBar/>
-    <ProfileNav/>
-   
+      <NavBar />
+      <ProfileNav />
     </>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

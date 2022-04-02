@@ -20,35 +20,33 @@ const Register = () => {
 
   const validate = (e) => {
     e.preventDefault();
-    
+
     if (
       userInfo.name.trim() &&
       userInfo.phoneNumber.length === 10 &&
       userInfo.password.trim()
     ) {
       const check = checkInputDataPhoneNumber(userState, userInfo);
-      
+
       if (check === "true") {
         alert("User Registered!!");
         setIsValidData("true");
-        
-      } 
-     
-      else {
+      } else {
         dispatch(signUp([...userState, userInfo]));
         setIsValidData("true");
-        localStorage.setItem("userData", JSON.stringify([...userState, userInfo]));
-       
+        localStorage.setItem(
+          "userData",
+          JSON.stringify([...userState, userInfo])
+        );
       }
     } else alert("Enter valid details");
   };
-  const registered = () => setIsValidData('true')
-  useEffect(() =>{
-    console.log(isValidData)
-  }, [isValidData])
+  const registered = () => setIsValidData("true");
+  useEffect(() => {
+    console.log(isValidData);
+  }, [isValidData]);
   return (
     <>
-   
       {isValidData === "false" ? (
         <div>
           <div className="card text-center mx-auto mt-5 w-50 bg-light">
@@ -109,7 +107,16 @@ const Register = () => {
                     Submit
                   </button>
                 </div>
-                <small>Already have an account? <button type="button" onClick={registered} className="btn btn-light">Click here</button></small>
+                <small>
+                  Already have an account?{" "}
+                  <button
+                    type="button"
+                    onClick={registered}
+                    className="btn btn-light"
+                  >
+                    Click here
+                  </button>
+                </small>
               </form>
             </div>
           </div>

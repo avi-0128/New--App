@@ -42,27 +42,27 @@ const MovieList = (props) => {
         <div className="text-center">
           <div>
             {" "}
-            {
-              props.count ?  <h4> Total displayed Results {array.length}  
-              <br /> Scroll down to get {props.count - array.length} more results
-            </h4>  : <h4>Search for a movie</h4>
-            } {"   "}
+            {props.count ? (
+              <h4>
+                {" "}
+                Total displayed Results {array.length}
+                <br /> Scroll down to get {props.count - array.length} more
+                results
+              </h4>
+            ) : (
+              <h4>Search for a movie</h4>
+            )}{" "}
+            {"   "}
             <br />{" "}
-           
-          
           </div>
 
           {array.map((movie, index) => (
-          
-            <div
-              className="text-center w-25 mx-auto mt-5"
-              key={index}>
+            <div className="text-center w-25 mx-auto" key={index}>
               <img src={movie.Poster} alt={movie.Title} />
               <div className="card-body">
                 <p className="card-text mx-auto">{movie.Title}</p>
                 <p className="card-text">Year - {movie.Year}</p>
                 <p className="card-text">Type - {movie.Type}</p>
-
                 <button
                   type="button"
                   onClick={() => addCurrentFav(movie)}
