@@ -54,14 +54,7 @@ const LogIn = () => {
                    onChange={(e) =>
                     setUserInfo({ ...userInfo, phoneNumber: e.target.value })
                   } />
-                  {/* <input
-                    type="text"
-                    placeholder="Phone Number"
-                    value={userInfo.phoneNumber}
-                    onChange={(e) =>
-                      setUserInfo({ ...userInfo, phoneNumber: e.target.value })
-                    }
-                  /> */}
+                 
                 </div>
                 <div className="form-group mt-2">
                   <label>Password</label>
@@ -70,14 +63,7 @@ const LogIn = () => {
                    onChange={(e) =>
                     setUserInfo({ ...userInfo, password: e.target.value })
                   } />
-                  {/* <input
-                    type="password"
-                    placeholder="Password"
-                    value={userInfo.password}
-                    onChange={(e) =>
-                      setUserInfo({ ...userInfo, password: e.target.value })
-                    }
-                  /> */}
+                 
                 </div>
                 <div className="text-center mt-2">
                   <button type="submit" className="btn btn-primary ">
