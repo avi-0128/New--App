@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signUp, userReduxData } from "../Redux/Features/userSlice";
 import { checkInputDataPhoneNumber } from "./checkInputData";
+import InputFields from "./InputFields";
 import LogIn from "./LogIn";
 
 const Register = () => {
@@ -55,52 +56,37 @@ const Register = () => {
                 <div className="form-group mt-2">
                   <label>Email address</label>
                   <br />
-                  <input
-                    type="email"
-                    placeholder="Enter email"
-                    value={userInfo.email}
-                    onChange={(e) =>
-                      setUserInfo({ ...userInfo, email: e.target.value })
-                    }
-                  />
+                  <InputFields type={'email'} placeholder={'Enter email'} value={userInfo.email}
+                   onChange={(e) =>
+                    setUserInfo({ ...userInfo, email: e.target.value })
+                  } />
                 </div>
                 <div className="form-group mt-2">
                   <label>Name</label>
                   <br />
-                  <input
-                    type="text"
-                    placeholder="Enter Name"
-                    value={userInfo.name}
-                    onChange={(e) =>
-                      setUserInfo({ ...userInfo, name: e.target.value })
-                    }
-                  />
+                  <InputFields type={'text'} placeholder={'Enter Name'} value={userInfo.name}
+                   onChange={(e) =>
+                    setUserInfo({ ...userInfo, name: e.target.value })
+                  } />
                 </div>
                 <div className="form-group mt-2">
                   <label>Phone Number</label>
                   <br />
-                  <input
-                    type="text"
-                    placeholder="Phone Number"
-                    value={userInfo.phoneNumber}
-                    onChange={(e) =>
-                      setUserInfo({ ...userInfo, phoneNumber: e.target.value })
-                    }
-                  />
+                  <InputFields type={'text'} placeholder={'Phone Number'} value={userInfo.phoneNumber}
+                   onChange={(e) =>
+                    setUserInfo({ ...userInfo, phoneNumber: e.target.value })
+                  } />
+                 
                   <br />
                   <small>Enter your 10 digit mobile number</small>
                 </div>
                 <div className="form-group mt-2">
                   <label>Password</label>
                   <br />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={userInfo.password}
-                    onChange={(e) =>
-                      setUserInfo({ ...userInfo, password: e.target.value })
-                    }
-                  />
+                  <InputFields type={'password'} placeholder={'Password'} value={userInfo.password}
+                   onChange={(e) =>
+                    setUserInfo({ ...userInfo, password: e.target.value })
+                  } />
                 </div>
                 <div className="text-center mt-2">
                   <button type="submit" className="btn btn-primary ">

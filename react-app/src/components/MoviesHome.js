@@ -34,7 +34,7 @@ const MoviesHome = () => {
       setMovies([]);
       setPageNumber(1);
     } else if (movieState) setMovies(movies.concat(movieState));
-  }, [movieState, pageNumber]);
+  }, [movieState, pageNumber , movies , search]);
 
   const [isLoggedIn, setIsLoggedIn] = useState("true");
   useEffect(() => {
