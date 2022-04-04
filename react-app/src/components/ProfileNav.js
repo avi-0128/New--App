@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 const ProfileNav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav mr-auto">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div className="container-fluid col-sm-4 col-lg-6">
+        <ul className="navbar-nav mx-auto">
           <li className="nav-item active">
             <Link to="/home/profile/userName" className="nav-link">
               UserName
             </Link>
           </li>
-          <li className="nav-item active">
-            <Link to="/home/profile/phoneNumber" className="nav-link">
+          <li className="nav-item active ">
+            <Link to="/home/profile/phoneNumber" className="nav-link ">
               Phone Number
             </Link>
           </li>

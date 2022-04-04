@@ -5,6 +5,7 @@ import { checkInputDataPhoneNumber } from "./checkInputData";
 import InputFields from "./InputFields";
 import LogIn from "./LogIn";
 
+
 const Register = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
@@ -46,11 +47,16 @@ const Register = () => {
   useEffect(() => {
     console.log(isValidData);
   }, [isValidData]);
+
+
+
   return (
+    
     <>
       {isValidData === "false" ? (
-        <div>
-          <div className="card text-center mx-auto mt-5 w-50 bg-light">
+       
+        <div className=" container-fluid mx-auto  col-lg-6 col-md-6 col-sm-6 " >
+          <div className="card text-center   bg-light">
             <div className="card-body ">
               <form onSubmit={validate}>
                 <div className="form-group mt-2">
@@ -106,7 +112,8 @@ const Register = () => {
               </form>
             </div>
           </div>
-        </div>
+        </div> 
+      
       ) : (
         <LogIn />
       )}

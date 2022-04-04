@@ -9,8 +9,8 @@ const UserName = () => {
     <>
       <NavBar />
       <ProfileNav />
-      <div className="card text-center w-50 mx-auto mt-5">
-        <h4>
+      <div className="container-flui card text-center  mx-auto mt-5">
+        <h4 className="col-lg-4 col-md-4 col-sm-4">
           User Name: <span>{user.name}</span>
         </h4>
       </div>

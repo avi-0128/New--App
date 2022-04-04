@@ -32,10 +32,11 @@ const Favourites = () => {
         {getFavourites.length>0  
           ?
          getFavourites.map((movie, index) => (
+          <div className="container-fluid col-lg-8 col-md-6  ">
             <div className="text-center" alt={movie.Title} key={index}>
-              <img src={movie.Poster} alt={movie.Title} />
-              <div className="card-body  mx-auto w-50 ">
-                <h5 className="card-title mx-auto w-50">{movie.Title}</h5>
+              <img src={movie.Poster} alt={movie.Title} className='img-responsive' />
+              <div className="card-body  mx-auto col-lg-6 col-sm-3 col-md-4 ">
+                <h5 className="card-title mx-auto ">{movie.Title}</h5>
                 <p className="card-text">Year - {movie.Year}</p>
                 <p className="card-text">Type - {movie.Type}</p>
 
@@ -47,9 +48,13 @@ const Favourites = () => {
                 </button>
               </div>
             </div>
+            </div>
             
-          )) :<div className="text-center card w-25 mx-auto mt-5">
+          )) :
+          <div className="container-fluid col-lg-4 col-sm-4">
+          <div className="text-center card mx-auto mt-5">
              <h4>No favourites</h4>
+          </div>
           </div> }</div>
         
      

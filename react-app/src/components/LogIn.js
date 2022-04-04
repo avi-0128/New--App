@@ -43,14 +43,15 @@ const LogIn = () => {
   return (
     <>
       {isValidInput === "false" && userRegistered === "false" ? (
-        <div>
-          <div className="card text-center mx-auto mt-5 w-50">
+        <div className="container-fluid col-lg-6 col-sm-3 col-md-4">
+          
+          <div className="card text-center mx-auto mt-5 ">
             <div className="card-body">
               <form onSubmit={validate}>
                 <div>
                   <label>Phone Number</label>
                   <br />
-                  <InputFields type={'text'} placeholder={'Phone Number123'} value={userInfo.phoneNumber}
+                  <InputFields type={'text'} placeholder={'Phone Number'} value={userInfo.phoneNumber}
                    onChange={(e) =>
                     setUserInfo({ ...userInfo, phoneNumber: e.target.value })
                   } />

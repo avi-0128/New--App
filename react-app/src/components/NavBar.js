@@ -8,12 +8,12 @@ const NavBar = ({ setSearch, setIsLoggedIn }) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <Link to="/home" className="navbar-brand ml-3">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark  ">
+        <Link to="/home" className="navbar-brand mx-auto ">
           My-App
         </Link>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto ">
+        <div className="container-fluid col-sm-4 col-lg-6 ">
+          <ul className="navbar-nav mx-auto ">
             <li className="nav-item active">
               <Link to="/home/fav" className="nav-link">
                 Favourites
@@ -32,7 +32,7 @@ const NavBar = ({ setSearch, setIsLoggedIn }) => {
           </ul>
         </div>
 
-        <div className="text-center">
+        <div className="text-center mx-auto col-sm-3 col-lg-2">
           <SearchBox setSearch={setSearch} />
         </div>
       </nav>

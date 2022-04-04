@@ -13,8 +13,8 @@ const LogOut = () => {
     <>
       {currentUser ? (
         <>
-          <NavBar />
-          <div className="card w-50 mx-auto mt-5 text-center">
+          <NavBar /><div className="container-fluid">
+          <div className="card mx-auto mt-5 text-center col-lg-6 col-sm-4 col-md-6">
             <div className="card-body  ">
               <h4>Do you want to logout?</h4>
               <div className="card-text w-40 text-center">
@@ -34,7 +34,7 @@ const LogOut = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </div></div>
         </>
       ) : (
         <MoviesHome />

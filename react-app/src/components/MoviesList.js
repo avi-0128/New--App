@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getCurrentUser } from "./CurrentUser";
-
+import './FormStyle.css'
 const MovieList = (props) => {
   const inc = () => {
     // console.log(props.movies)
@@ -57,10 +57,11 @@ const MovieList = (props) => {
           </div>
 
           {array.map((movie, index) => (
-            <div className="text-center w-25 mx-auto" key={index}>
-              <img src={movie.Poster} alt={movie.Title} />
-              <div className="card-body">
-                <p className="card-text mx-auto">{movie.Title}</p>
+             <div className="container-fluid col-lg-8 col-md-6 ">
+             <div className="text-center"  key={index}>
+              <img src={movie.Poster} alt={movie.Title} className='img-responsive'/>
+              <div className="card-body  mx-auto col-lg-6 col-sm-3 col-md-4 ">
+                <h5 className="card-title mx-auto ">{movie.Title}</h5>
                 <p className="card-text">Year - {movie.Year}</p>
                 <p className="card-text">Type - {movie.Type}</p>
                 <button
@@ -71,6 +72,7 @@ const MovieList = (props) => {
                   Add To Favourites
                 </button>
               </div>
+            </div>
             </div>
           ))}
 
