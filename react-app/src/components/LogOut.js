@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { deleteCurrentUser, getCurrentUser } from "./CurrentUser";
 import MoviesHome from "./MoviesHome";
 import NavBar from "./NavBar";
 
 const LogOut = () => {
+  let currentUser = getCurrentUser();
+  useEffect(() => {
+    currentUser = getCurrentUser();
+  })
   return (
     <>
-      {getCurrentUser() ? (
+      {currentUser ? (
         <>
           <NavBar />
           <div className="card w-50 mx-auto mt-5 text-center">
