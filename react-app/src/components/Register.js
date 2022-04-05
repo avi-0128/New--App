@@ -4,6 +4,8 @@ import { signUp, userReduxData } from "../Redux/Features/userSlice";
 import { checkInputDataPhoneNumber } from "./checkInputData";
 import InputFields from "./InputFields";
 import LogIn from "./LogIn";
+import { setBackground } from "./Styles";
+
 
 
 const Register = () => {
@@ -48,18 +50,17 @@ const Register = () => {
     console.log(isValidData);
   }, [isValidData]);
 
-
-
+  setBackground('black')
   return (
     
     <>
       {isValidData === "false" ? (
        
-        <div className=" container-fluid mx-auto  col-lg-6 col-md-6 col-sm-6 " >
-          <div className="card text-center   bg-light">
-            <div className="card-body ">
-              <form onSubmit={validate}>
-                <div className="form-group mt-2">
+        <div className="container-fluid  col-lg-6 col-md-4 col-sm-4  " >
+          <div className="card text-center bg-dark  text-white  shadow border h-100 mt-5 mx-auto ">
+            <div className="card-body d-flex flex-column align-items-center ">
+              <form onSubmit={validate} className=''>
+                <div className="form-group">
                   <label>Email address</label>
                   <br />
                   <InputFields type={'email'} placeholder={'Enter email'} value={userInfo.email}
@@ -100,11 +101,11 @@ const Register = () => {
                   </button>
                 </div>
                 <small>
-                  Already have an account?{" "}
+                  Already have an account?{"    "}
                   <button
                     type="button"
                     onClick={registered}
-                    className="btn btn-light"
+                    className="btn btn-light  col-lg-6 col-xs-4"
                   >
                     Click here
                   </button>
